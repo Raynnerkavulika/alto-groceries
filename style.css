@@ -127,6 +127,17 @@
     background-color: var(--light-bg);
  }
 
+ .form-container form span a{
+    color: var(--green);
+    margin: 1.3rem 0;
+    font-size: 1.8rem;
+    float: left;
+}
+
+.form-container form span a:hover{
+    text-decoration: underline;
+}
+
  .form-container form p{
     color: var(--black);
     font-size: 1.9rem;

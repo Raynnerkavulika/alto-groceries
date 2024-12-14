@@ -131,7 +131,7 @@ function sendVerificationSMS($phone, $token) {
 <body>
     <section class="form-container">
         <form action="" method="post" enctype="multipart/form-data">
-              <h3>create an account</h3>
+              <h3><i class="fas fa-user-plus"></i>create an account</h3>
             <input type="text" name="name" placeholder="enter your username" class="box" required>
             <input type="email" name="email" placeholder="enter your email" class="box">
             <input type="number" name="phone" placeholder="eg. +2547..." min="0" class="box">
@@ -139,6 +139,7 @@ function sendVerificationSMS($phone, $token) {
             <input type="password" name="cpassword" placeholder="confirm your password" class="box" required>
             <input type="file" name="image" accept="image/png,image/jpeg,image/jpg" class="box">
             <input type="submit" name="submit" value="register now" class="btn">
+            <p>already have an account? <a href="login.php">login now</a></p>
         </form>
     </section>
 </body>

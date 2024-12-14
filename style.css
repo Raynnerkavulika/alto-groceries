@@ -46,8 +46,8 @@
      width: 100%;
      border-radius: .4rem;
      text-align: center;
-     margin: .7rem 0;
-     font-size: 1.5rem;
+     margin: .6rem 0;
+     font-size: 1.8rem;
      padding: 1rem 1.4rem;
      text-transform: capitalize;
      color: var(--white);
@@ -79,7 +79,7 @@
  }
  
  html{
-     font-size: 70%;
+     font-size: 65%;
      scroll-behavior: smooth;
      overflow-x: hidden;
  }
@@ -89,3 +89,55 @@
      color: var(--white);
  }
  
+ .form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+ }
+
+ .form-container form{
+    width: 43rem;
+    background-color: var(--white);
+    padding: 1.4rem;
+    border-radius: .5rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+ }
+
+ .form-container form h3{
+    color: var(--black);
+    text-transform: capitalize;
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+ }
+
+ .form-container form h3 i{
+   color: var(--green);
+   margin-right: .5rem;
+ }
+
+ .form-container form .box{
+    width: 100%;
+    border-radius: .5rem;
+    color: var(--black);
+    padding: 1.3rem .8rem;
+    font-size: 1.8rem;
+    margin: .7rem 0;
+    background-color: var(--light-bg);
+ }
+
+ .form-container form p{
+    color: var(--black);
+    font-size: 1.9rem;
+    margin-top: 1rem;
+ }
+
+ .form-container form p a{
+    color: var(--green);
+ }
+
+ .form-container form p a:hover{
+    text-decoration: underline;
+    color: var(--orange);
+ }

@@ -1,6 +1,7 @@
 <?php
  include 'config.php';
 
+
  use PHPMailer\PHPMailer\PHPMailer;
  use PHPMailer\PHPMailer\Exception;
 
@@ -66,21 +67,25 @@
        }
 
 
-       //generate unique verification token
-       $verificationToken = bin2hex(openssl_random_pseudo_bytes(16)); //generate a random token
+        // Generate a unique token and verification code
+    $token = bin2hex(random_bytes(16)); // Random token for email verification
+    $verification_code = rand(100000, 999999); // Random 6-digit verification code
 
+    // Set the token expiry time (e.g., 1 hour)
+    $token_expiry = time() + 3600; // 1 hour from now
        //insert new user with a verification token and a profile image
-       $insert_user = $conn->prepare("INSERT INTO `users`(name,email,phone,password_hash,verification_token,image) VALUES(?,?,?,?,?,?)");
-       if($insert_user->execute([$name,$email,$phone,$password,$verificationToken,$image_path])){
+       $insert_user = $conn->prepare("INSERT INTO `users`(name,email,phone,password_hash,token,image, verification_code, token_expiry,verified) VALUES(?,?,?,?,?,?,?,?,0)");
+       if($insert_user->execute([$name,$email,$phone,$password,$token,$image_path, $verification_code, $token_expiry])){
 
        //sending verification email or sms
        if($email){
-        sendVerificationEmail($email,$verificationToken);
-        $message[] = "Registration successful,please check your email to verify your account";
-       }elseif($phone){
-        sendVerificationSMS($phone,$verificationToken);
+        sendVerificationEmail($email,$token);
         $message[] = "Registration successful,please check your email to verify your account";
        }
+
+        // After registering the user, redirect to the verification page with the token
+    header("Location: verify.php?token=" . urlencode($token));
+    exit();
     }else{
         $message[] = "could not register";
     }
@@ -91,25 +96,43 @@
 function sendVerificationEmail($email,$token){
   $mail = new PHPMailer(true);
   try{
-    $mail->setFrom('noreply@yourdomain.com','yourwebsite');
+
+     //Server settings
+     $mail->isSMTP(); 
+     $mail->Host       = 'smtp.gmail.com'; 
+     $mail->SMTPAuth   = true; 
+     $mail->Username   = 'lorem.ipsum.sample.email@gmail.com';
+     $mail->Password   = 'novtycchbrhfyddx';
+     $mail->SMTPSecure = 'ssl';
+     $mail->Port       = 465;    
+
+    $mail->setFrom('kavulikar@gmail.com','Alto groceries');
     $mail->addAddress($email);
-    $mail->Subject = 'Account Verification';
-        $mail->Body = "Click the link below to verify your email address:\n\n" .
-                      "https://yourdomain.com/verify.php?token=" . $token;
+    $mail->addReplyTo('kavulikar@gmail.com', 'Alto groceries'); 
+
+
+        //Content
+        $mail->isHTML(true);  
+        $mail->Subject = 'Verification Code';
+        $mail->Body    = 'Your verification code is: ' .$token; 
 
         $mail->send();
+
+
     } catch (Exception $e) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
-    } 
+        echo "Error: " . $mail->ErrorInfo;
+    }
 }
 
+
+
 // Function to send verification SMS (simulated)
-function sendVerificationSMS($phone, $token) {
-    // Assuming you have an SMS service provider like Twilio
-    $message = "Your verification code is: $token";
-    $api_url = "https://sms-provider.com/send?to=$phone&message=" . urlencode($message);
-    $response = file_get_contents($api_url);
-}
+// function sendVerificationSMS($phone, $token) {
+//     // Assuming you have an SMS service provider like Twilio
+//     $message = "Your verification code is: $token";
+//     $api_url = "https://sms-provider.com/send?to=$phone&message=" . urlencode($message);
+//     $response = file_get_contents($api_url);
+// }
 
  
 

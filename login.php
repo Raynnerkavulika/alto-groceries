@@ -1,4 +1,24 @@
+<?php
 
+include 'config.php';
+
+session_start();
+
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $email = filter_var($email,FILTER_SANITIZE_STRING);
+    $password = $_POST['password'];
+    $password = filter_var($password,FILTER_SANITIZE_STRING);
+
+    $select = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+    $select->execute([$email,$password]);
+
+    if($select->rowCount() > 0){
+        
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

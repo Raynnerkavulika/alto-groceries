@@ -79,7 +79,7 @@
 
        //sending verification email or sms
        if($email){
-        sendVerificationEmail($email,$token);
+        sendVerificationEmail($email,$verification_code);
         $message[] = "Registration successful,please check your email to verify your account";
        }
 
@@ -93,7 +93,7 @@
 
 //   function to send verification email
 
-function sendVerificationEmail($email,$token){
+function sendVerificationEmail($email,$verification_code){
   $mail = new PHPMailer(true);
   try{
 
@@ -114,7 +114,7 @@ function sendVerificationEmail($email,$token){
         //Content
         $mail->isHTML(true);  
         $mail->Subject = 'Verification Code';
-        $mail->Body    = 'Your verification code is: ' .$token; 
+        $mail->Body    = 'Your verification code is: ' .$verification_code; 
 
         $mail->send();
 

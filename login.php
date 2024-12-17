@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
     $password = filter_var($password,FILTER_SANITIZE_STRING);
 
-    $select = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+    $select = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password_hash = ?");
     $select->execute([$email,$password]);
     $row = $select->fetch(PDO::FETCH_ASSOC);
 
@@ -22,6 +22,8 @@ if(isset($_POST['submit'])){
             $_SESSION['user'] = $row['id'];
             header('location:index.php');
          }
+    }else{
+        echo 'wrong email or password';
     }
 }
 

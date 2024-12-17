@@ -12,9 +12,16 @@ if(isset($_POST['submit'])){
 
     $select = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
     $select->execute([$email,$password]);
+    $row = $select->fetch(PDO::FETCH_ASSOC);
 
     if($select->rowCount() > 0){
-        
+         if($row['user_type'] == 'admin'){
+            $_SESSION['admin'] = $row['id'];
+            header('location:admin_dashboard.php');
+         }elseif($row['user_type'] == 'user'){
+            $_SESSION['user'] = $row['id'];
+            header('location:index.php');
+         }
     }
 }
 

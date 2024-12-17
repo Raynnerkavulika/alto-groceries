@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
     if($select->rowCount() > 0){
          if($row['user_type'] == 'admin'){
             $_SESSION['admin'] = $row['id'];
-            header('location:admin_dashboard.php');
+            header('location:admin/admin_dashboard.php');
          }elseif($row['user_type'] == 'user'){
             $_SESSION['user'] = $row['id'];
             header('location:index.php');

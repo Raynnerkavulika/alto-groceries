@@ -21,7 +21,52 @@
   <div class="nav nav-2">
       <section class="flex">
          <ul>
-            <li></li>
+            <li><a href="#">fresh produce<i class="fas fa-angle-down"></i></a>
+               <ul>
+                    <li><a href="category=fruits">fruits</a></li>
+                    <li><a href="category=vegetables">vegetables</a></li>
+                    <li><a href="category=herbs">herbs</a></li>
+               </ul>
+            </li>
+
+            <li><a href="#">Bakery & confectionery<i class="fas fa-angle-down"></i></a>
+               <ul>
+                    <li><a href="category=bread">bread</a></li>
+                    <li><a href="category=pastries">pastries</a></li>
+                    <li><a href="category=grains">grains</a></li>
+               </ul>
+            </li>
+
+            <li><a href="#">meat & fish<i class="fas fa-angle-down"></i></a>
+               <ul>
+                    <li><a href="category=meat">meat</a></li>
+                    <li><a href="category=fish">fish</a></li>
+               </ul>
+            </li>
+
+            <li><a href="#">spices & condiments<i class="fas fa-angle-down"></i></a>
+               <ul>
+                    <li><a href="category=sauces">sauces</a></li>
+                    <li><a href="category=oils">oils</a></li>
+               </ul>
+            </li>
+
+            <li><a href="#">beverages<i class="fas fa-angle-down"></i></a>
+               <ul>
+                    <li><a href="category=water">water</a></li>
+                    <li><a href="category=juices">juices</a></li>
+                    <li><a href="category=soft drinks">soft drinks</a></li>
+               </ul>
+            </li>
+
+            <li><a href="#">staples<i class="fas fa-angle-down"></i></a>
+               <ul>
+                    <li><a href="category=grains">grains</a></li>
+                    <li><a href="category=pulses">pulses</a></li>
+                    <li><a href="category=pasta and noodles">pasta and noodles</a></li>
+                    <li><a href="category=flour">flour</a></li>
+               </ul>
+            </li>
          </ul>
       </section>
   </div>

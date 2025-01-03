@@ -1,3 +1,16 @@
+<?php 
+include '../config.php';
+
+
+session_start();
+
+$admin_id = $_SESSION['admin'];
+
+if(!isset($admin_id)){
+  header('location:login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +27,12 @@
 
     <?php include 'admin_header.php'; ?>
 
+    <?php
+      $select_pending_orders = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
+      $select_pending_orders->execute(['pending']);
+
+
     
+    ?>
 </body>
 </html>

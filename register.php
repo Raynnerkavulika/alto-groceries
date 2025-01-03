@@ -46,7 +46,7 @@
        $allowedTypes = ['image/jpeg','image/jpg','image/png','image/gif'];
        $fileType = $_FILES['image']['type'];
        $fileSize = $_FILES['image']['size'];
-       $maxFileSize = 2 * 1024 *1024; //2MB maximum file size
+       $maxFileSize = 2 * 1024 * 1024; //2MB maximum file size
        $uploadDir = 'upload/images/';
 
        if(!in_array($fileType,$allowedTypes)){

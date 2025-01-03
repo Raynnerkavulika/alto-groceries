@@ -89,6 +89,13 @@
      color: var(--white);
  }
  
+ .title{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+ }
+
  .form-container{
     display: flex;
     align-items: center;
@@ -198,4 +205,14 @@
 
 .verification-container form button:hover {
     background-color: #218838;
+}
+
+
+/* add product section */
+
+.add-products form{
+    max-width: 40rem;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 2rem;
 }

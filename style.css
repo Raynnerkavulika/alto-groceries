@@ -252,3 +252,14 @@ header .flex .navbar a:hover{
     color: var(--green);
     text-decoration: underline;
 }
+
+header .flex  .icons > *{
+   color: var(--light-color);
+   font-size: 1.8rem;
+   cursor: pointer;
+   margin-right: 1rem;
+}
+
+header .flex  .icons > *:hover{
+    color: var(--green);
+}

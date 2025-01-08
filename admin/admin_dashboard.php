@@ -18,7 +18,7 @@ if(!isset($admin_id)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin dashboard</title>
     <!-- custom css file link -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <!-- font awesome cdn link -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -27,12 +27,12 @@ if(!isset($admin_id)){
 
     <?php include 'admin_header.php'; ?>
 
-    <?php
-      $select_pending_orders = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
-      $select_pending_orders->execute(['pending']);
+    <!-- <?php
+      // $select_pending_orders = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
+      // $select_pending_orders->execute(['pending']);
 
 
     
-    ?>
+    ?> -->
 </body>
 </html>

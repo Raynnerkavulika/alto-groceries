@@ -7,5 +7,11 @@
 </head>
 <body>
     
+
+
+  <!-- admin header -->
+
+  <?php include 'admin_header.php'; ?>
+
 </body>
 </html>

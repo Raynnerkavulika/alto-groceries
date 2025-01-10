@@ -264,3 +264,10 @@ header .flex  .icons > *:hover{
     color: var(--green);
 }
 
+/* admin add products  starts*/
+
+.add-products form{
+    max-width: 70rem;
+    margin: 0 auto;
+}
+/* admin add products  ends*/

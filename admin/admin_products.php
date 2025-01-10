@@ -20,10 +20,16 @@ session_start();
     <link rel="stylesheet" href="../style.css">
     <!-- font awesome cdn link -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-     
+
 </head>
 <body>
     
+
+  <!-- admin header -->
+
+  <?php include 'admin_header.php'; ?>
+
+  
 <section class="add-products">
     <h3 class="title">add a product</h3>
     <form action="" method="post" enctype="multipart/form-data">

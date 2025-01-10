@@ -269,5 +269,9 @@ header .flex  .icons > *:hover{
 .add-products form{
     max-width: 70rem;
     margin: 0 auto;
+    background-color: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+
 }
 /* admin add products  ends*/

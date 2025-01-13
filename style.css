@@ -279,6 +279,31 @@ header .flex  .icons > *:hover{
     background-color: var(--white);
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
+    padding: 1.2rem;
+}
 
+.add-products form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.add-products form .flex .inputbox{
+    width: 49%;
+}
+
+.add-products form .box{
+    width: 100%;
+    color: var(--black);
+    background-color: var(--light-bg);
+    font-size: 1.6rem;
+    margin: .7rem 0;
+    border-radius: .5rem;
+    padding: 1rem .3rem;
+}
+
+.add-products form textarea{
+    resize: none;
+    height: 15rem;
 }
 /* admin add products  ends*/

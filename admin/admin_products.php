@@ -6,6 +6,8 @@ session_start();
 if(isset($_POST['add_product'])){
     $name = $_POST['name'];
     $name = filter_var($name,FILTER_SANITIZE_STRING);
+    $price = $_POST['price'];
+    $price = filter_var($price,FILTER_SANITIZE_STRING);
     
 }
 

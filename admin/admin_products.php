@@ -3,7 +3,10 @@ include '../config.php';
 
 session_start();
 
-
+if(isset($_POST['add_product'])){
+    $name = $_POST['namme'];
+    $name = filter_var($name,FILTER_SANITIZE_STRING);
+}
 
 ?>
 

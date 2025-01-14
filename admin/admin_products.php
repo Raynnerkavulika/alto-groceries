@@ -10,6 +10,8 @@ if(isset($_POST['add_product'])){
     $price = filter_var($price,FILTER_SANITIZE_STRING);
     $category = $_POST['category'];
     $category = filter_var($category,FILTER_SANITIZE_STRING);
+    $details = $_POST['details'];
+    $details = filter_var($details,FILTER_SANITIZE_STRING);
 
     
 }

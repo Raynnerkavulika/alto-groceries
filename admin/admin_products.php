@@ -13,6 +13,9 @@ if(isset($_POST['add_product'])){
     $details = $_POST['details'];
     $details = filter_var($details,FILTER_SANITIZE_STRING);
 
+
+    $image = $_FILES['image']['name'];
+    
     
 }
 

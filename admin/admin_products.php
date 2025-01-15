@@ -15,7 +15,10 @@ if(isset($_POST['add_product'])){
 
 
     $image = $_FILES['image']['name'];
-    
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_size = $_FILES['image']['size'];
+    $image_folder = 'upload\images/'.$image;
+
     
 }
 

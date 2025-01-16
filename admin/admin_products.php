@@ -84,8 +84,10 @@ if(isset($_POST['add_product'])){
     <h3 class="title">show products</h3>
 
     <?php 
+       $select_product = $conn->prepare("SELECT * FROM `products`");
+       $select_product->execute();
        
-    
+
     ?>
 </section>
 </body>

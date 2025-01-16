@@ -20,6 +20,8 @@ if(isset($_POST['add_product'])){
     $image_folder = 'upload\images/'.$image;
 
     
+
+    
 }
 
 ?>

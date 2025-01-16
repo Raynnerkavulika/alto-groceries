@@ -27,12 +27,16 @@ if(!isset($admin_id)){
 
     <?php include 'admin_header.php'; ?>
 
-    <!-- <?php
-      // $select_pending_orders = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
-      // $select_pending_orders->execute(['pending']);
+     <?php
+     $total_pending_orders = 0;
+      $select_pending_orders = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+      $select_pending_orders->execute(['pending']);
+      while($fetch_pending_orders = $select_pending_orders->fetch(PDO::FETCH_ASSOC)){
+         $total_pending_orders += $fetch_pending_orders;
+      }    
+    ?>
 
-
-    
-    ?> -->
+    <h3>total pending orders</h3>
+    <p>SH <?= $total_pending_orders; ?></p>
 </body>
 </html>

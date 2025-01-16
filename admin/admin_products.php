@@ -19,7 +19,12 @@ if(isset($_POST['add_product'])){
     $image_size = $_FILES['image']['size'];
     $image_folder = 'upload\images/'.$image;
 
-    
+    $select = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
+    $select->execute([$name]);
+
+    if($select->rowCount() > 0){
+        $message[] = 'product name already exist';
+    }
 
     
 }
@@ -71,8 +76,17 @@ if(isset($_POST['add_product'])){
             </div>
         </div>
         <textarea name="details" class="box" placeholder="enter product details" required></textarea>
-        <input type="submit" class="btn" name="add_product">
+        <input type="submit" class="btn" value="add product" name="add_product">
     </form>
+</section>
+
+<section class="show-product">
+    <h3 class="title">show products</h3>
+
+    <?php 
+       
+    
+    ?>
 </section>
 </body>
 </html>

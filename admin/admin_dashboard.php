@@ -26,6 +26,8 @@ if(!isset($admin_id)){
     <!-- admin header -->
 
     <?php include 'admin_header.php'; ?>
+
+
     <section class="dashboard">
     <h3 class="title">admin dashboard</h3>
 
@@ -108,7 +110,7 @@ if(!isset($admin_id)){
           <p><?= $number_of_users; ?></p>
           </div>
 
-          <div class="box">
+          <!-- <div class="box">
             <?php
               $select_messages = $conn->prepare("SELECT * FROM `messages`");
               $select_messages->execute();
@@ -117,7 +119,7 @@ if(!isset($admin_id)){
 
           <h3>messages received</h3>
           <p><?= $number_of_messages; ?></p>
-          </div>
+          </div> -->
         </div>
     </section>
 

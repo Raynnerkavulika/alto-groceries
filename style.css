@@ -271,6 +271,19 @@ header .flex  .icons > *:hover{
     color: var(--green);
 }
 
+/* admin dashboard starts*/
+
+  .dashboard .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    justify-content: space-between;
+  }
+
+  .dashboard .box-container .box{
+    background-color: var(--white);
+    text-align: center;
+  }
+/* admin dashboard ends*/
 /* admin add products  starts*/
 
 .add-products form{

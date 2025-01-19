@@ -275,7 +275,7 @@ header .flex  .icons > *:hover{
 
   .dashboard .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
     justify-content: space-between;
     gap: 1.5rem;
   }
@@ -285,6 +285,10 @@ header .flex  .icons > *:hover{
     text-align: center;
     padding: 1rem;
     border-radius: .5rem;
+  }
+
+  .dashboard .box-container .box h3{
+    font-size: 1.4rem;
   }
 /* admin dashboard ends*/
 /* admin add products  starts*/

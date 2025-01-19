@@ -60,20 +60,6 @@ if(!isset($admin_id)){
                 <p>Sh <?= $total_paid_orders; ?>/-</p>
           </div>
 
-            <div class="box">
-              <?php
-                $total_paid_orders = 0;
-                  $select_paid_orders = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-                  $select_paid_orders->execute(['paid']);
-                  while($fetch_paid_orders = $select_paid_orders->fetch(PDO::FETCH_ASSOC)){
-                    $total_paid_orders += $fetch_paid_orders;
-                  }    
-                ?>
-
-                <h3>total paid orders</h3>
-                <p>Sh <?= $total_paid_orders; ?>/-</p>
-          </div>
-
           <div class="box">
               <?php
                 $total_failed_orders = 0;

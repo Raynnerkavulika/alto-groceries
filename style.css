@@ -284,6 +284,7 @@ header .flex  .icons > *:hover{
     background-color: var(--white);
     text-align: center;
     padding: 1rem;
+    border-radius: .5rem;
   }
 /* admin dashboard ends*/
 /* admin add products  starts*/

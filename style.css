@@ -277,11 +277,13 @@ header .flex  .icons > *:hover{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
     justify-content: space-between;
+    gap: 1.5rem;
   }
 
   .dashboard .box-container .box{
     background-color: var(--white);
     text-align: center;
+    padding: 1rem;
   }
 /* admin dashboard ends*/
 /* admin add products  starts*/

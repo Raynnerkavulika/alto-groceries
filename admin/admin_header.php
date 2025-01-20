@@ -5,6 +5,7 @@
         <nav class="navbar">
             <a href="admin_dashboard.php">home</a>
             <a href="admin_products.php">products</a>
+            <a href="admin_users.php">users</a>
         </nav>
 
         <div class="icons">

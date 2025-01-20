@@ -19,11 +19,14 @@ if(isset($_POST['add_product'])){
     $image_size = $_FILES['image']['size'];
     $image_folder = 'upload\images/'.$image;
 
-    $select = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
-    $select->execute([$name]);
+    $select_product = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
+    $select_product->execute([$name]);
 
-    if($select->rowCount() > 0){
+    if($select_product->rowCount() > 0){
         $message[] = 'product name already exist';
+    }else{
+        $insert_product = $conn->prepare("INSERT INTO `products`() VALUES()");
+        $insert_product->execute();
     }
 
     
@@ -81,13 +84,30 @@ if(isset($_POST['add_product'])){
 </section>
 
 <section class="show-product">
-    <h3 class="title">show products</h3>
+    <h3 class="title">show added products</h3>
 
     <?php 
-       $select_product = $conn->prepare("SELECT * FROM `products`");
-       $select_product->execute();
-       
-
+       $show_product = $conn->prepare("SELECT * FROM `products`");
+       $show_product->execute();
+       if($show_product->rowCount()){
+        while($fetch_product = $show_product->fetch(PDO::FETCH_ASSOC)){      
+    ?>
+        <div class="box">
+            <div class="price"><?= $fetch_product['price']; ?></div>
+            <img src="upload\images\<?= $fetch_product['image'] ?>" alt="">
+            <div class="name"><?= $fetch_product['name']; ?></div>
+            <div class="category"><?= $fetch_product['category']; ?></div>
+            <div class="details"><?= $fetch_product['details']; ?></div>
+            <div class="flex-btn">
+                <a href="admin_update_products.php?update=<?= $fetch_product['id']; ?>" class="btn">update</a>
+                <a href="admin_products.php?delete=<?= $fetch_product['id']; ?>" class="delete-btn">delete</a>
+            </div>
+        </div>
+    <?php  
+        }
+        }else{
+        echo '<p class="empty">no products has been added yet!</p>';
+        } 
     ?>
 </section>
 </body>

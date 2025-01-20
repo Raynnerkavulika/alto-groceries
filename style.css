@@ -96,7 +96,7 @@
  } 
  
  .title{
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
     color: var(--black);
     text-align: center;
@@ -228,6 +228,7 @@ header{
     background-color: var(--white);
     top: 0;left: 0;right: 0;
     z-index: 1000;
+    position: sticky;
     box-shadow: var(--box-shadow);
 }
 
@@ -284,22 +285,35 @@ header .flex  .icons > *:hover{
     background-color: var(--white);
     text-align: center;
     padding: 1rem;
+    box-shadow: var(--box-shadow);
     border-radius: .5rem;
   }
 
   .dashboard .box-container .box h3{
-    font-size: 1.4rem;
+    font-size: 2rem;
+    padding: 1rem;
+  }  
+
+  .dashboard .box-container .box p{
+    font-size: 1.8rem;
+    color: var(--black);
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    color: var(--green);
+    padding: .8rem .2rem;
   }
+
+  
 /* admin dashboard ends*/
 /* admin add products  starts*/
 
 .add-products form{
-    max-width: 70rem;
+    max-width: 65rem;
     margin: 0 auto;
     background-color: var(--white);
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
-    padding: 1.2rem;
+    padding: 1.5rem;
 }
 
 .add-products form .flex{
@@ -316,8 +330,9 @@ header .flex  .icons > *:hover{
     width: 100%;
     color: var(--black);
     background-color: var(--light-bg);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin: .7rem 0;
+    border: var(--border);
     border-radius: .5rem;
     padding: 1rem .3rem;
 }

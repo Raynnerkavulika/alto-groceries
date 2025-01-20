@@ -42,8 +42,8 @@ if(!isset($admin_id)){
                   }    
                 ?>
 
-                <h3>total pending orders</h3>
-                <p>Sh <?= $total_pending_orders; ?>/-</p>
+                <h3>Sh <?= $total_pending_orders; ?>/-</h3>
+                <p>total pending orders</p>
           </div>
 
           <div class="box">
@@ -55,9 +55,9 @@ if(!isset($admin_id)){
                     $total_paid_orders += $fetch_paid_orders;
                   }    
                 ?>
-
-                <h3>total paid orders</h3>
-                <p>Sh <?= $total_paid_orders; ?>/-</p>
+                               
+                <h3>Sh <?= $total_paid_orders; ?>/-</h3>
+                <p>total paid orders</p>
           </div>
 
           <div class="box">
@@ -69,9 +69,8 @@ if(!isset($admin_id)){
                     $total_paid_orders += $fetch_failed_orders;
                   }    
                 ?>
-
-                <h3>total failed orders</h3>
-                <p>Sh <?= $total_failed_orders; ?>/-</p>
+                <h3>Sh <?= $total_failed_orders; ?>/-</h3>
+                <p>total failed orders</p>
           </div>
 
           <div class="box">
@@ -81,8 +80,8 @@ if(!isset($admin_id)){
               $number_of_product = $select_product->rowCount();
             ?>
 
-          <h3>products added</h3>
-          <p>Sh <?= $number_of_product; ?>/-</p>
+          <h3><?= $number_of_product; ?></h3>
+          <p>products added</p>
           </div>
 
           <div class="box">
@@ -92,8 +91,8 @@ if(!isset($admin_id)){
               $number_of_users = $select_users->rowCount();
             ?>
 
-          <h3>users registerd</h3>
-          <p><?= $number_of_users; ?></p>
+          <h3><?= $number_of_users; ?></h3>
+          <p>users registerd</p>
           </div>
 
           <!-- <div class="box">
